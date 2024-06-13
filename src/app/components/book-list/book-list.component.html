@@ -1,0 +1,47 @@
+<div class="main-card">
+    <h1 class="main-title">Listado de Libros de Misterio</h1>
+
+    <mat-card class="list-card" *ngIf="!loading">
+        <mat-card-header class="mat-card-header">
+            <div class="header-icons">
+                <button mat-icon-button color="primary" (click)="toggleViewMode('card')" [ngClass]="{ 'selected': viewMode === 'card' }">
+                    <mat-icon>view_module</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="toggleViewMode('table')" [ngClass]="{ 'selected': viewMode === 'table' }">
+                    <mat-icon>table_view</mat-icon>
+                </button>
+            </div>
+        </mat-card-header>
+
+        <div *ngIf="books.length > 0" [@fadeInOut]="'in'">
+
+            <!-- Contenido de la lista de libros -->
+            <div *ngIf="viewMode === 'card'" class="row">
+                <div class="card-container col-4 col-md-6 col-lg-4" *ngFor="let book of books">
+                    <app-book-card [book]="book" [@fadeInOut]="'in'"></app-book-card>
+                </div>
+            </div>
+
+            <div *ngIf="viewMode === 'table'" class="mat-elevation-z8">
+                <app-grid [books]="books" [displayedColumns]="['title', 'authors', 'first_publish_year']"></app-grid>
+            </div>
+
+        </div>
+
+        <!-- Contenido si no hay libros -->
+        <div class="container" *ngIf="books.length === 0">
+            <p>No se encontraron libros de misterio.</p>
+        </div>
+        <hr>
+        <!-- Paginación -->
+        <mat-paginator [length]="totalBooks"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="[15, 30, 45]"
+            (page)="onPageChange($event)">
+        </mat-paginator>
+    </mat-card>
+
+    <div *ngIf="loading" class="spinner-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

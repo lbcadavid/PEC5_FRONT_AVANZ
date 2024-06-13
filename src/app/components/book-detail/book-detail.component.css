@@ -1,0 +1,21 @@
+.book-detail-container {
+    text-align: center;
+  }
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 35px;
+}
+
+.book-image {
+    height: 20vw;
+    margin-bottom: 20px;
+}
+
+mat-expansion-panel {
+    text-align: left;
+}
+  

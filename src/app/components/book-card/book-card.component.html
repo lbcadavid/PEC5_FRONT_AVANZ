@@ -1,0 +1,9 @@
+<mat-card class="clickable-card card-container mat-card" (click)="goToBookDetail(book.title)">
+    <mat-card-header>
+        <mat-card-title>{{ book.title }}</mat-card-title>
+        <mat-card-subtitle>{{ book.author_name.join(', ') }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Publicado en {{ book.first_publish_year }}</p>
+    </mat-card-content>
+</mat-card>

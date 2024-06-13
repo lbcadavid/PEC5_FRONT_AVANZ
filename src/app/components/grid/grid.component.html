@@ -1,0 +1,22 @@
+<table mat-table [dataSource]="books" class="mat-elevation-z8 clickable-table">
+    <!-- Definición de columnas -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Título </th>
+      <td mat-cell *matCellDef="let book" (click)="goToBookDetail(book.title)">{{ book.title }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="authors">
+      <th mat-header-cell *matHeaderCellDef> Autores </th>
+      <td mat-cell *matCellDef="let book" (click)="goToBookDetail(book.title)">{{ book.author_name.join(', ') }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="first_publish_year">
+      <th mat-header-cell *matHeaderCellDef> Año de Publicación </th>
+      <td mat-cell *matCellDef="let book" >{{ book.first_publish_year }}</td>
+    </ng-container>
+  
+    <!-- Filas de la tabla -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-hover" [@fadeInOut]="'in'"></tr>
+  </table>
+  

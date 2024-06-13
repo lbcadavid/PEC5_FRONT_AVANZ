@@ -1,0 +1,88 @@
+.main-card {
+  padding: 20px;
+  margin: 20px auto;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  border-radius: 8px;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.list-card {
+  padding: 0;
+}
+
+.mat-card-header {
+  background-color: #f0e4d7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.header-icons button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-icons button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.header-icons button.selected {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.header-icons mat-icon {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.container {
+  text-align: center;
+}
+
+.card-container {
+  padding: 15px;
+  min-height: 175px;
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.mat-elevation-z8 {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.mat-spinner {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .header-icons {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .header-icons button {
+      margin-right: 0;
+      margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="header">
+        <h1>{{ book.title }}</h1>
+        <button mat-button color="primary" (click)="goBack()">Back</button>
+    </div>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+        <mat-panel-title>Show All Details</mat-panel-title>
+        </mat-expansion-panel-header>
+        
+        <div class="row">  
+            <div class="image-container col-12 col-md-6 col-lg-4">
+                <img src="assets/book-image.jpg" alt="Imagen generica del libro" class="book-image">
+            </div>
+            <div class="col-12 col-md-6 col-lg-8 mt-4">
+                <p><strong>Autor(es):</strong> {{ book.author_name.join(', ') }}</p>
+                <p><strong>Año de Publicación:</strong> {{ book.first_publish_year }}</p>
+                <p><strong>Descripción:</strong> {{ book.description }}</p>
+                <p><strong>Número de Páginas:</strong> {{ book.number_of_pages }}</p>
+                <p><strong>Editoriales:</strong> {{ book.publisher }}</p>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</div>
